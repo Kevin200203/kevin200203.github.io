@@ -2,25 +2,8 @@ const root = document.documentElement;
 root.classList.add("js");
 
 const navToggle = document.querySelector(".nav__toggle");
-const navMenu = document.getElementById("nav-menu");
 const navLinks = document.querySelectorAll(".nav__link");
-const themeToggle = document.getElementById("theme-toggle");
-
-const storedTheme = localStorage.getItem("selected-theme");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
-
-function setTheme(theme) {
-  root.dataset.theme = theme;
-  localStorage.setItem("selected-theme", theme);
-
-  if (themeToggle) {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
-  }
-}
-
-setTheme(initialTheme);
+const sections = Array.from(document.querySelectorAll("main section[id]"));
 
 function closeNavigation() {
   document.body.classList.remove("nav-open");
@@ -52,13 +35,6 @@ window.addEventListener("resize", () => {
   }
 });
 
-themeToggle?.addEventListener("click", () => {
-  const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-  setTheme(nextTheme);
-});
-
-const sections = Array.from(document.querySelectorAll("main section[id]"));
-
 if ("IntersectionObserver" in window && sections.length > 0) {
   const activeObserver = new IntersectionObserver(
     (entries) => {
@@ -83,7 +59,9 @@ if ("IntersectionObserver" in window && sections.length > 0) {
 
 const revealElements = document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window && revealElements.length > 0) {
+if (window.location.hash && revealElements.length > 0) {
+  revealElements.forEach((element) => element.classList.add("is-visible"));
+} else if ("IntersectionObserver" in window && revealElements.length > 0) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -95,7 +73,7 @@ if ("IntersectionObserver" in window && revealElements.length > 0) {
     },
     {
       rootMargin: "0px 0px -12% 0px",
-      threshold: 0.15,
+      threshold: 0.12,
     }
   );
 
