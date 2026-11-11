@@ -1,4 +1,4 @@
-import * as THREE from './vendor/three.module.min.js?v=20261112-6';
+import * as THREE from './vendor/three.module.min.js?v=20261112-7';
 
 // An illustrative memory table, not a visualization of learned model weights.
 // Integer x/y/z indices keep every pulse on two or three adjacent table entries.
@@ -26,6 +26,7 @@ const fragmentShader = `
     float edge = 1.0 - smoothstep(.30, .50, radius);
     if (edge <= .0) discard;
     gl_FragColor = vec4(mix(ink, accent, vStrength), edge * (.42 + vStrength * .48));
+    #include <colorspace_fragment>
   }`;
 function disposeGrid() {
   if (!grid) return;

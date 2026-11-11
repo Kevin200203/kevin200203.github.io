@@ -1,6 +1,5 @@
 const root = document.documentElement;
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const themeButton = document.querySelector('.theme-toggle');
 let preference = root.dataset.theme || 'system';
 
@@ -10,7 +9,7 @@ function applyTheme() {
   const actualTheme = preference === 'system' ? (systemTheme.matches ? 'dark' : 'light') : preference;
   const next = { system: 'light', light: 'dark', dark: 'system' }[preference];
   themeButton.querySelector('.theme-label').textContent = preference === 'system' ? 'Auto' : preference === 'light' ? 'Light' : 'Dark';
-  themeButton.setAttribute('aria-label', `Color theme: ${preference}. Switch to ${next} theme`);
+  themeButton.setAttribute('aria-label', `Color theme: ${themeButton.querySelector('.theme-label').textContent}. Switch to ${next} theme`);
   themeButton.title = `Theme: ${preference} (switch to ${next})`;
   document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
     meta.content = actualTheme === 'dark' ? '#171717' : '#ffffff';
@@ -83,7 +82,7 @@ copyButton.addEventListener('click', async () => {
 });
 
 function loadBackground() {
-  const load = () => import('./engram.js?v=20261112-6').then(module => module.enhanceMemory()).catch(() => {});
+  const load = () => import('./engram.js?v=20261112-7').then(module => module.enhanceMemory()).catch(() => {});
   if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 1800 }); else setTimeout(load, 100);
 }
 if (document.readyState === 'complete') loadBackground(); else window.addEventListener('load', loadBackground, { once: true });

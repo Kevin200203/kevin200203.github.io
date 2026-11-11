@@ -1,58 +1,54 @@
-# Kevin Siringo-Ringo — personal portfolio
+# Kevin Siringo Ringo — personal portfolio
 
-A static portfolio for GitHub Pages: research, projects, experience, and contact. All public content lives in `index.html`. No framework, package installation, or build step is needed to publish.
+Static HTML, CSS, and vanilla ES modules for https://kevin200203.github.io/. All public content lives in `index.html`; GitHub Pages publishes `main` at `/`. No framework, dependency installation, or build step is needed to deploy.
 
-## Preview
+## Preview and assets
 
-Run `python3 scripts/preview.py`, then open http://localhost:4173. This checkout-local server disables caching. Deployed CSS/module entry URLs also carry an explicit version; keep those versions in sync when replacing assets.
+Run `python3 scripts/preview.py`, then open http://localhost:4173. The preview server disables caching. Every local runtime asset URL uses the same `?v=20261112-7` cache version, including font preloads, image variants, worker imports, and the vendored Three.js core import. Update these together when shipping changes.
 
-## Structure
+- `index.html`: semantic content, navigation, immediate SVG-clipped photograph, paper figure, citation, canonical URL, Open Graph, and Twitter Card.
+- `packages/css/styles.css`: Bricolage Grotesque headings, Source Serif 4 body, editorial margin columns, responsive navigation, light/dark palettes, and static background fallback.
+- `packages/js/main.js`: theme preference, mobile navigation, citation copying, and deferred background loading.
+- `packages/js/engram.js`: the single background canvas, worker bridge, theme, pause preference, visibility, and graceful fallback.
+- `packages/js/engram-worker.js`: regular perspective memory grid, adjacent-entry pulses, scroll movement, and desktop pointer response.
+- `packages/js/vendor/`: pinned Three.js 0.180.0 ES modules and MIT license; only the local core-import URL is versioned.
+- `packages/js/portrait-outline.js` and `portrait-network.js`: optional static-contour authoring data, not downloaded by the page.
+- `packages/fonts/`: two local WOFF2 families and their OFL licenses. BibTeX uses system monospace.
+- `packages/images/`: the original portrait crop, its static contour, two WebP sizes of the paper’s original Figure 1, and a 1200 × 630 PNG social preview.
 
-- `index.html`: semantic content, citation, navigation, and a static SVG portrait fallback.
-- `packages/css/styles.css`: wide editorial layout, readable text columns, local fonts, responsive navigation, and light/dark palettes.
-- `packages/js/main.js`: theme preference, mobile navigation, citation copying, deferred background loading.
-- `packages/js/engram.js` / `engram-worker.js`: one deferred Three.js memory grid in an OffscreenCanvas worker, capped at 20 fps and DPR 1.5. CSS gradients reduce its strength beneath reading columns.
-- `packages/js/portrait-outline.js`: the pose contour used by both the photograph clipping geometry and the neural frame.
-- `packages/js/portrait-network.js`: shared contour containment, deterministic variation, and coordinated red/rose/mauve colors.
-- `packages/js/vendor/`: pinned Three.js 0.180.0 ES modules and MIT license.
-- `packages/fonts/`: Bricolage Grotesque and Source Serif 4 WOFF2 files and OFL licenses.
-- `packages/images/`: the original portrait crop and its vector neural frame.
+## Portrait and background
 
-## Portrait
+The original clipped photograph and SVG contour are present in HTML. Only the contour settles once over 1.4 seconds; reduced motion disables it. The photograph never waits for JavaScript or particle assembly, and sections never wait for scrolling to become visible.
 
-The original clipped photograph and its SVG contour render directly from HTML. Only the contour settles once over 1.4 seconds using CSS; the photograph is never hidden or assembled from particles. Reduced motion disables that animation. Sections are always visible, without scroll reveals.
+One fixed Three.js canvas is enhanced after the content loads. Its regular rows, columns, and depth suggest a memory table; occasional red pulses follow two or three adjacent entries. This is a decorative illustration of the paper’s bigram/trigram pathways, not actual learned weights. CSS gradient scrims leave roughly 12–15% background strength beneath reading areas, without measuring individual elements. The right margin, hero, and section gaps expose the grid.
 
-The optional authoring command `node scripts/generate-neural-fallback.mjs` refreshes the checked-in contour asset and inline clipping path. This is not a deployment build step. Keep the contour and source photograph aligned when changing the pose.
+The worker is capped at 20 fps and DPR 1.5, with 1,071 nodes on desktop and 234 on mobile. A visible header button pauses/resumes motion and remembers the choice. Rendering stops in hidden tabs. Reduced motion, unavailable OffscreenCanvas/WebGL, context loss, and module failures retain a static CSS grid. Initial reduced-motion visits do not fetch Three.js. All content and navigation work without JavaScript.
 
-## Memory background
+Optional authoring tools:
 
-A regular perspective lattice suggests memory-table rows, columns, and depth. Occasional red recalls follow two or three adjacent entries. This is an artistic illustration of the paper’s bigram/trigram pathways, not learned weights or an architecture diagram. The grid moves slowly with scroll and responds to desktop pointers. A visible header control pauses motion and remembers the choice. Rendering stops in hidden tabs. Reduced motion, unavailable OffscreenCanvas/WebGL, and worker failures retain a static CSS grid; no Three.js is fetched on initial reduced-motion visits.
+- `node scripts/generate-neural-fallback.mjs` refreshes the static contour and inline clipping path; it preserves the current asset version. Keep the contour and original photograph aligned when changing the pose.
+- `scripts/social-preview.html` is the source for the checked-in PNG. Open it through the preview server, wait for fonts, and capture its 1200 × 630 viewport at DPR 1. Neither authoring action is part of deployment.
 
-## Content and extension
+## Content changes in this review
 
-Sources and verification decisions are recorded in [CONTENT-SOURCES.md](CONTENT-SOURCES.md). The user's original facts and destinations remain the baseline; later public research was explicitly authorized.
+Sources and verification decisions are in [CONTENT-SOURCES.md](CONTENT-SOURCES.md). Comments next to claims identify their sources; missing details use `TODO(content)`.
 
-The copy was condensed and reframed:
+- Hero: “I research language models for Indonesia's regional languages, starting with Batak and Minangkabau.” The primary link is “Read the TOBA-LM paper”; the CV remains secondary.
+- Research: the opening explains the data-scarcity problem and attributes the speaker totals to BPS (2011), as quoted by the paper. The approach and training-result paragraphs are preserved. Authors and publication links follow the enlarged paper title, with the original architecture figure below the summary.
+- Projects: only Tomato Vision and AUTOPLANDES remain, with concise contribution/leadership descriptions and their evidence links directly below. Tomato Vision has no screenshot.
+- Experience: newest first, role and organization together, with short descriptions. The user confirmed the BFI start date as 13 August 2025. Awards contains the KSE scholarship and P2MW funding; Coursera entries and generic Profile links were removed.
+- Identity: Kevin Siringo Ringo throughout the portfolio. The printed name Kevin Siringoringo is preserved in the paper author line and BibTeX. Contact retains the original invitation and destinations, with a smaller “Let’s talk”.
 
-- The hero introduces Kevin with “My work connects language model research with computer vision and applied AI systems.”
-- Research uses the complete publication title and author order, three short paragraphs, contextual figures, prominent paper links, and copyable BibTeX. The training result is attributed to the paper and described in steps, not wall-clock speed.
-- Projects cover Tomato Vision and AUTOPLANDES, with evidence links directly below each description and no project screenshots. Tomato Vision’s specific role is still a content TODO.
-- Experience and education are ordered newest first, with roles and organizations in each heading. The user confirmed the BFI start date as 13 August 2025. Awards contains the KSE scholarship and P2MW funding.
-- Contact invites research collaboration and applied AI opportunities with “tell me what you’re exploring,” retaining the original email and LinkedIn destinations.
+To add a section, use `.section`, a concise heading with `aria-labelledby`, and `.editorial-row` containing `.margin-note` plus `.entry-content`. On mobile these form one reading column. Keep claim sources beside the content and in the source log.
 
-Add a section using `.section` / `.section-heading` with a unique heading ID and `aria-labelledby`. `.editorial-row` pairs a `.margin-note` with `.entry-content`; on small screens they become one reading column. Keep facts in their relevant section and technology names in context.
+## Remaining content TODO
 
-## Remaining content TODOs
-
-Search `TODO(content)` in `index.html`:
-
-
-The paper's author list and the meaning of its training-step comparison have been checked against arXiv; they are no longer draft TODOs.
+Confirm Kevin’s specific role and responsibilities in **Tomato Vision**. The existing portfolio establishes participation and technologies; no team-lead or sole-developer role is invented. There are no unresolved paper-author, figure, social-preview, or BFI-date TODOs.
 
 ## Verification
 
-Local screenshots and audit artifacts live in the ignored `docs/qa/` directory. The final version is checked at 1440px and 390px with motion in both themes. Responsive content checks also cover 360, 375, 390, 414, 430, and 768px widths, plus 844×390 and 915×412 landscape layouts in both themes. The mobile project metadata remains visible, including the AUTOPLANDES program year. Tests cover assembly from one persistent set of photographic fragments, moving contour nodes and lower-torso geometry, automatic looping, keyboard pause, cleanup of the viewport layer, navigation/focus, clipboard fallback, theme persistence, no JavaScript, reduced motion, missing WebGL/Worker/modules, and context loss.
+Screenshots and machine-readable reports are kept locally in the ignored `docs/qa/` directory. Review screenshots cover 1440px and 390px in light/dark themes, with hero, research, projects, experience, and full-page views. Mobile checks include 360, 375, 390, 414, 430, and 768px widths and 844×390 / 915×412 landscape. Visible mobile links/buttons have at least 44 × 44px targets.
 
-The original checked-out mobile page measured 6,568px. The broader portfolio requested in later revisions contains more verified content than the first compact redesign; the final narrative version is 4,820px at 390px width, rather than the earlier 2,876px compact prototype. The final desktop height at 1440px is 3,950px. Lighthouse results are local simulated mobile measurements, not a guarantee for every device or host.
+Checks cover immediate portrait/no-JS content, reduced motion (including preference changes), missing OffscreenCanvas/WebGL/modules, pause persistence, hidden-tab suspension, DPR cap, keyboard menu/focus, theme persistence, clipboard success/fallback, and publication/identity metadata. Automated axe checks and manual screenshots complement each other; the background is deliberately stronger in empty space and subdued under text.
 
-Final local Lighthouse mobile: **Performance 94, Accessibility 100**, FCP **0.9s**, LCP **3.0s**, TBT **120ms**, CLS **0**. Automated axe checks found no WCAG A/AA violations at 1440px and 390px in both themes.
+Local simulated mobile Lighthouse: **Performance 98, Accessibility 100**, FCP **0.9s**, LCP **0.9s**, TBT **150ms**, CLS **0.01**. Local transfer totals are uncompressed and are not compared with GitHub Pages compressed transfer. The before/after transfer audit uses the public site, cold-cache resource discovery, and encoded response body sizes including worker imports and the lazy-loaded figure; headers and TLS overhead are excluded. These measurements are observations, not guarantees for every device.

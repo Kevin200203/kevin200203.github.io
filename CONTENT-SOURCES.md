@@ -1,6 +1,6 @@
 # Public content sources
 
-Reviewed on 11 November 2026. The user authorized public research to enrich the portfolio. Existing repository facts remain the baseline; only matching professional sources were added.
+Reviewed on 11–12 November 2026. The user authorized public research to enrich the portfolio. Existing repository facts remain the baseline; only matching professional sources were added.
 
 ## TOBA-LM
 
@@ -56,3 +56,7 @@ Source: TOBA-LM, section 2.2, https://arxiv.org/html/2603.10006v1. The backgroun
 ## Review: CV and awards
 
 Role/organization titles follow the user’s requested wording. Experience is ordered by start date descending (2025, 2023, 2022, 2021), with concise descriptions retaining the original scope. Awards retain the KSE scholarship (2024–2025) and P2MW funding (2024); generic LinkedIn “Profile” links and the two Coursera entries are removed.
+
+## Review: identity and social preview
+
+The user explicitly specifies **Kevin Siringo Ringo** for the portfolio identity. The printed paper author name **Kevin Siringoringo** remains unchanged in the author line and BibTeX. Open Graph, Twitter Card, and the 1,200 × 630 PNG reuse the verified name and the exact user-supplied hero sentence; no additional credentials or claims appear in the preview. The canonical site URL is https://kevin200203.github.io/.

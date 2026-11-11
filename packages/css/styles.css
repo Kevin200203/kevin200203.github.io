@@ -1,13 +1,13 @@
 @font-face {
   font-family: "Bricolage Grotesque";
-  src: url("../fonts/bricolage-grotesque-latin.woff2") format("woff2");
+  src: url("../fonts/bricolage-grotesque-latin.woff2?v=20261112-7") format("woff2");
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
 }
 @font-face {
   font-family: "Source Serif 4";
-  src: url("../fonts/source-serif-4-latin.woff2") format("woff2");
+  src: url("../fonts/source-serif-4-latin.woff2?v=20261112-7") format("woff2");
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
@@ -66,7 +66,7 @@ strong { font-weight: 600; }
 .editorial-row { display: grid; grid-template-columns: var(--margin) minmax(0, 1fr) 180px; column-gap: var(--gutter); }
 .entry-content { grid-column: 2; min-width: 0; max-width: 66ch; }
 .entry-content > h3 + p { margin-top: 8px; }
-.margin-note, .section-number, .site-footer, .small-text { color: var(--muted); font-family: var(--sans); font-size: 15px; line-height: 1.5; }
+.margin-note, .site-footer, .small-text { color: var(--muted); font-family: var(--sans); font-size: 15px; line-height: 1.5; }
 .margin-note { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 5px; }
 .date-range { white-space: nowrap; }
 .skip-link { position: fixed; z-index: 10; left: 16px; top: 16px; background: var(--paper); padding: 8px 16px; transform: translateY(-180%); }
@@ -95,7 +95,6 @@ strong { font-weight: 600; }
 .section { padding-top: 38px; padding-bottom: 48px; border-top: 1px solid var(--rule); }
 .section-heading { align-items: baseline; margin-bottom: 36px; }
 .section-heading h2 { grid-column: 2 / -1; }
-.section-number { font-size: 18px; }
 .paper-title { font-size: 36px; line-height: 1.16; letter-spacing: -.03em; max-width: 30ch; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 14px 0 12px; font: 500 18px/1.4 var(--sans); }
 .paper-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
@@ -208,7 +207,6 @@ strong { font-weight: 600; }
   .entry-content { max-width: none; }
   .section { padding-block: 28px; }
   .section-heading { display: flex; align-items: baseline; gap: 14px; margin-bottom: 22px; }
-  .section-number { font-size: 14px; flex-shrink: 0; }
   h2 { font-size: 26px; line-height: 1.2; text-wrap: initial; }
   h3, .cv-list h3 { font-size: 23px; }
   .paper-title { font-size: 29px; line-height: 1.2; text-wrap: initial; }
@@ -264,9 +262,9 @@ strong { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { .portrait-contour { animation: none; } }
 
 /* A single fixed memory field. Reading scrims are CSS gradients, not measured DOM boxes. */
-:root { --reading-paper: rgb(255 255 255 / 85%); }
-:root[data-theme="dark"] { --reading-paper: rgb(23 23 23 / 85%); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --reading-paper: rgb(23 23 23 / 85%); } }
+:root { --reading-paper: rgb(255 255 255 / 88%); }
+:root[data-theme="dark"] { --reading-paper: rgb(23 23 23 / 88%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --reading-paper: rgb(23 23 23 / 88%); } }
 .memory-field { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; perspective: 900px; }
 .memory-field::before { content: ""; position: absolute; inset: -25%; color: var(--ink); opacity: .22; transform: rotateX(22deg) rotateY(-14deg) rotateZ(-5deg); background-image: radial-gradient(circle, currentColor 1.5px, transparent 2px), linear-gradient(to right, currentColor .5px, transparent .5px), linear-gradient(to bottom, currentColor .5px, transparent .5px); background-size: 64px 64px; background-position: 32px 32px, 0 0, 0 0; }
 .memory-field canvas { position: absolute; width: 100%; height: 100%; opacity: 0; }
@@ -310,3 +308,9 @@ strong { font-weight: 600; }
 }
 
 .project-entry .entry-source { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; }
+
+@media (max-width: 700px) {
+  a, button { min-width: 44px; min-height: 44px; }
+  a { display: inline-flex; align-items: center; }
+  .site-footer a { padding-block: 12px; }
+}
