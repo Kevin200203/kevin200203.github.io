@@ -1,4 +1,4 @@
-import * as THREE from './vendor/three.module.min.js?v=20261112-4';
+import * as THREE from './vendor/three.module.min.js?v=20261112-5';
 
 // An illustrative memory table, not a visualization of learned model weights.
 // Integer x/y/z indices keep every pulse on two or three adjacent table entries.

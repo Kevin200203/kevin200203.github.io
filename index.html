@@ -16,8 +16,8 @@
     try { const theme = localStorage.getItem('portfolio-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}
   </script>
   <!-- Keep the HTML and redesigned assets in sync with previously cached visits. -->
-  <link rel="stylesheet" href="./packages/css/styles.css?v=20261112-4">
-  <script type="module" src="./packages/js/main.js?v=20261112-4"></script>
+  <link rel="stylesheet" href="./packages/css/styles.css?v=20261112-5">
+  <script type="module" src="./packages/js/main.js?v=20261112-5"></script>
 </head>
 <body>
   <div class="memory-field" aria-hidden="true"></div>
@@ -83,7 +83,7 @@
           <!-- Source: arxiv.org/html/2603.10006v1, abstract and section 4.2. This is a reported training-step comparison, not a wall-clock speed claim. -->
           <!-- Source: Figure 1, arxiv.org/html/2603.10006v1/asset-engram/figure_1.jpg. Resized and converted to WebP without cropping or redrawing. -->
           <figure class="research-figure">
-            <a class="figure-image-link" href="./packages/images/toba-architecture.webp?v=20261112-4" target="_blank" rel="noreferrer" aria-label="View the TOBA-LM architecture diagram at full size, opens in a new tab"><img src="./packages/images/toba-architecture.webp?v=20261112-4" srcset="./packages/images/toba-architecture-small.webp?v=20261112-4 800w, ./packages/images/toba-architecture.webp?v=20261112-4 1600w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 75vw, 760px" width="1600" height="1483" loading="lazy" decoding="async" alt="TOBA-LM architecture: a transformer block connects to an Engram module with bigram and trigram embedding pathways."></a>
+            <a class="figure-image-link" href="./packages/images/toba-architecture.webp?v=20261112-5" target="_blank" rel="noreferrer" aria-label="View the TOBA-LM architecture diagram at full size, opens in a new tab"><img src="./packages/images/toba-architecture.webp?v=20261112-5" srcset="./packages/images/toba-architecture-small.webp?v=20261112-5 800w, ./packages/images/toba-architecture.webp?v=20261112-5 1600w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 75vw, 760px" width="1600" height="1483" loading="lazy" decoding="async" alt="TOBA-LM architecture: a transformer block connects to an Engram module with bigram and trigram embedding pathways."></a>
             <figcaption>Figure 1. TOBA-LM architecture. Source: <a href="https://arxiv.org/html/2603.10006v1#S1.F1" target="_blank" rel="noreferrer">Situngkir, Siringoringo &amp; Lumbantobing (2026) ↗</a>. Select the diagram to view it at full size.</figcaption>
           </figure>
           <details class="citation">
@@ -108,26 +108,22 @@
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">02</span><h2 id="projects-title">Projects</h2></div>
-      <div class="editorial-row section-intro"><p class="entry-content">Alongside model research, I work on problems in crop health, data workflows, and public information.</p></div>
+      <div class="editorial-row section-intro"><p class="entry-content">My applied AI projects explore plant disease detection and smart farming.</p></div>
       <article class="editorial-row project-entry">
         <div class="margin-note"><time datetime="2023">2023</time><span>Computer vision</span></div>
         <div class="entry-content">
+          <!-- Source: original portfolio, Tomato Vision project; Google Play destination supplied in the user review. -->
+          <!-- TODO(content): Confirm Kevin’s specific role and responsibilities in Tomato Vision. -->
           <h3>Tomato Vision</h3>
-          <p>Tomato Vision brings plant disease detection into an Android application. It uses YOLOv5 for detection and TensorFlow Lite for deployment, with funding through PKM-KC.</p>
+          <p>I contributed to Tomato Vision, an Android application for plant disease detection using YOLOv5 and TensorFlow Lite, funded through PKM-KC.</p>
+          <a class="entry-source" href="https://play.google.com/store/apps/details?id=org.tensorflow.lite.tomatovision.detection" target="_blank" rel="noreferrer">View on Google Play ↗</a>
         </div>
       </article>
       <article class="editorial-row project-entry compact-entry">
         <div class="margin-note"><span>2023 program</span><span>AI &amp; agriculture</span></div>
-        <div class="entry-content"><h3>AUTOPLANDES</h3><p>Agriculture is also the setting for AUTOPLANDES: automatic plant detection and smart farming for farmer groups in Bangah, Baturiti. I led the team on this Innovillage-funded social project.</p></div>
-        <a class="entry-source" href="https://innovillage.id/storage/sk_top_120_pdf/c96997a1fb9b86d5ba63cf56ca5f84f6.pdf#page=12" target="_blank" rel="noreferrer">Project record ↗</a>
-      </article>
-      <article class="editorial-row project-entry compact-entry">
-        <div class="margin-note"><span>Automation</span></div>
-        <div class="entry-content"><!-- TODO(content): Add a specific workflow, its users, and a verified outcome to make this project story more concrete. --><h3>Workflow Systems</h3><p>Applied AI also depends on the systems around it. This work focuses on automation and data-backed applications using Python, PostgreSQL, and MongoDB.</p></div>
-      </article>
-      <article class="editorial-row project-entry compact-entry">
-        <div class="margin-note"><span>Web development</span></div>
-        <div class="entry-content"><!-- TODO(content): Add a verified example of the public information or service this website provides. --><h3>Pakkat Village</h3><p>For Pakkat Village, the focus is public information: a website built with HTML, CSS, and JavaScript.</p></div>
+        <!-- Source: Innovillage 2023 funding decision, page 12, row 118; Kevin is listed as team lead. -->
+        <div class="entry-content"><h3>AUTOPLANDES</h3><p>I led AUTOPLANDES, an Innovillage-funded team project for automatic plant detection and smart farming for farmer groups in Bangah, Baturiti.</p>
+        <a class="entry-source" href="https://innovillage.id/storage/sk_top_120_pdf/c96997a1fb9b86d5ba63cf56ca5f84f6.pdf#page=12" target="_blank" rel="noreferrer">Project record ↗</a></div>
       </article>
     </section>
 

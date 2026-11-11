@@ -36,7 +36,7 @@ The copy was condensed and reframed:
 
 - The hero introduces Kevin with “My work connects language model research with computer vision and applied AI systems.”
 - Research uses the complete publication title and author order, three short paragraphs, contextual figures, prominent paper links, and copyable BibTeX. The training result is attributed to the paper and described in steps, not wall-clock speed.
-- Projects connect crop health, workflow automation, and public information to their technical approaches. Tomato Vision keeps its PKM-KC context but its application-listing image is removed at the user’s request. AUTOPLANDES includes the verified team-lead and Innovillage record. Workflow Systems and Pakkat remain concise where concrete outcomes have not been supplied.
+- Projects cover Tomato Vision and AUTOPLANDES, with evidence links directly below each description and no project screenshots. Tomato Vision’s specific role is still a content TODO.
 - Experience and education follow a chronological narrative: university study, teaching during those studies, Bangkit training, then the current AI Engineering role. Scholarships, funding, and courses appear once in Awards & Certifications.
 - Contact invites research collaboration and applied AI opportunities with “tell me what you’re exploring,” retaining the original email and LinkedIn destinations.
 
@@ -48,8 +48,6 @@ Search `TODO(content)` in `index.html`:
 
 - Confirm the BFI-specific employment start date. The existing 2025–Present period describes AI Engineering, rather than verified BFI tenure.
 - Supply verified direct credential URLs for the listed courses.
-- Add a concrete workflow, intended users, and verified outcome for Workflow Systems.
-- Add a concrete example of the public information or service provided by the Pakkat Village website. No missing impact figures or user stories have been invented.
 
 The paper's author list and the meaning of its training-step comparison have been checked against arXiv; they are no longer draft TODOs.
 

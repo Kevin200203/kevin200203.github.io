@@ -320,3 +320,5 @@ strong { font-weight: 600; }
   .contact-email { font-size: 32px; }
   .research-figure figcaption a { display: inline-flex; align-items: center; min-height: 44px; }
 }
+
+.project-entry .entry-source { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; }
