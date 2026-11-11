@@ -11,7 +11,7 @@ Run `python3 scripts/preview.py`, then open http://localhost:4173. This checkout
 - `index.html`: semantic content, citation, navigation, and a static SVG portrait fallback.
 - `packages/css/styles.css`: wide editorial layout, readable text columns, local fonts, responsive navigation, and light/dark palettes.
 - `packages/js/main.js`: theme preference, mobile navigation, citation copying, deferred background loading.
-- `packages/js/background.js` / `background-worker.js`: slow sine-wave neural background at ten fps, with all reading regions erased from the canvas.
+- `packages/js/engram.js` / `engram-worker.js`: one deferred Three.js memory grid in an OffscreenCanvas worker, capped at 20 fps and DPR 1.5. CSS gradients reduce its strength beneath reading columns.
 - `packages/js/portrait-outline.js`: the pose contour used by both the photograph clipping geometry and the neural frame.
 - `packages/js/portrait-network.js`: shared contour containment, deterministic variation, and coordinated red/rose/mauve colors.
 - `packages/js/vendor/`: pinned Three.js 0.180.0 ES modules and MIT license.
@@ -23,6 +23,10 @@ Run `python3 scripts/preview.py`, then open http://localhost:4173. This checkout
 The original clipped photograph and its SVG contour render directly from HTML. Only the contour settles once over 1.4 seconds using CSS; the photograph is never hidden or assembled from particles. Reduced motion disables that animation. Sections are always visible, without scroll reveals.
 
 The optional authoring command `node scripts/generate-neural-fallback.mjs` refreshes the checked-in contour asset and inline clipping path. This is not a deployment build step. Keep the contour and source photograph aligned when changing the pose.
+
+## Memory background
+
+A regular perspective lattice suggests memory-table rows, columns, and depth. Occasional red recalls follow two or three adjacent entries. This is an artistic illustration of the paper’s bigram/trigram pathways, not learned weights or an architecture diagram. The grid moves slowly with scroll and responds to desktop pointers. A visible header control pauses motion and remembers the choice. Rendering stops in hidden tabs. Reduced motion, unavailable OffscreenCanvas/WebGL, and worker failures retain a static CSS grid; no Three.js is fetched on initial reduced-motion visits.
 
 ## Content and extension
 

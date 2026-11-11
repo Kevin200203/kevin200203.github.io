@@ -83,7 +83,7 @@ copyButton.addEventListener('click', async () => {
 });
 
 function loadBackground() {
-  const load = () => import('./background.js?v=20261112-2').then(module => module.enhanceBackground()).catch(() => {});
+  const load = () => import('./engram.js?v=20261112-3').then(module => module.enhanceMemory()).catch(() => {});
   if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 1800 }); else setTimeout(load, 100);
 }
 if (document.readyState === 'complete') loadBackground(); else window.addEventListener('load', loadBackground, { once: true });

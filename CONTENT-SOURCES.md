@@ -31,8 +31,12 @@ Direct certificate URLs have not been verified; course titles are not linked to 
 
 ## Deliberately excluded
 
-Namesake profiles, private contact details found in third-party material, follower counts, unverified model-release ownership, and additional conference claims. No new Batak or Minangkabau word examples were invented. The neural portrait is an artistic reconstruction of the user-provided pose, not a trained-model visualization or a scientific result. Its geometry follows the photograph's outer contour. The latest requested sequence assembles the original photograph from textured fragments within that contour, with moving neural paths and a network shape continuing its lower torso. It does not crossfade a separate photograph over a finished silhouette. The source photograph is not retouched; its background is excluded by SVG clipping and a matching procedural contour mask. No facial features are generated.
+Namesake profiles, private contact details found in third-party material, follower counts, unverified model-release ownership, and additional conference claims. No new Batak or Minangkabau word examples were invented. The portrait uses the original photograph clipped to its pose, with a decorative static SVG contour; no facial features are generated.
 
 ## Review: research introduction
 
 The November 2026 user review explicitly supplies the hero sentence: “I research language models for Indonesia's regional languages, starting with Batak and Minangkabau.” Its paper destination is https://arxiv.org/abs/2603.10006. This is the author’s stated research focus, consistent with the paper; no broader research claims are inferred.
+
+## Memory-grid illustration
+
+Source: TOBA-LM, section 2.2, https://arxiv.org/html/2603.10006v1. The background’s two/three-entry pulses illustrate the bigram/trigram memory pathways described there. The regular perspective grid is decorative: it does not show actual weights, activation measurements, or the model architecture.
