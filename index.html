@@ -1,317 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kevin Siringo-Ringo is an AI Engineer focused on LLM research, automation systems, data engineering, and applied AI projects.">
-    <meta name="theme-color" content="#0646e8">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./packages/css/styles.css">
-
-    <title>Kevin Siringo-Ringo - AI Engineer Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kevin Siringo-Ringo's research and engineering portfolio: language models, computer vision, and applied AI systems. Explore research, projects, and experience.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <title>Kevin Siringo-Ringo — Research &amp; Engineering</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Cpath d='M8 6v20m0-9L23 6M13 14l11 12' stroke='%23b4232c' stroke-width='3' fill='none'/%3E%3C/svg%3E">
+  <link rel="preload" href="./packages/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./packages/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    // Apply a saved choice before paint; CSS handles system preference without JS.
+    try { const theme = localStorage.getItem('portfolio-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}
+  </script>
+  <!-- Keep the HTML and redesigned assets in sync with previously cached visits. -->
+  <link rel="stylesheet" href="./packages/css/styles.css?v=20261111-14">
+  <script type="module" src="./packages/js/main.js?v=20261111-14"></script>
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header shell">
+    <nav class="navigation" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Kevin Siringo-Ringo home">Kevin Siringo-Ringo<span aria-hidden="true">.</span></a>
+      <div class="nav-controls">
+        <button class="theme-toggle" type="button" hidden aria-label="Change color theme">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg>
+          <span class="theme-label">Auto</span>
+        </button>
+        <button class="nav-toggle" type="button" hidden aria-expanded="false" aria-controls="nav-menu">Menu <span aria-hidden="true">+</span></button>
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-    <header class="site-header" id="site-header">
-        <nav class="nav container" aria-label="Primary navigation">
-            <a href="#home" class="nav__brand" aria-label="Kevin Siringo-Ringo home">
-                <span class="nav__brand-main">Kevin Siringo-Ringo</span>
-                <span class="nav__brand-sub">Portfolio</span>
-            </a>
-
-            <button class="nav__toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <div class="nav__menu" id="nav-menu">
-                <a href="#home" class="nav__link active-link">Home</a>
-                <a href="#work" class="nav__link">Work</a>
-                <a href="#experience" class="nav__link">Experience</a>
-                <a href="#skills" class="nav__link">Skills</a>
-                <a href="#contact" class="nav__link nav__link--pill">Let's Work</a>
-            </div>
-        </nav>
-    </header>
-
-    <main id="main">
-        <section class="hero" id="home" aria-label="AI Engineer portfolio introduction">
-            <div class="hero__pattern" aria-hidden="true"></div>
-            <div class="hero__accent hero__accent--left" aria-hidden="true"></div>
-            <div class="hero__accent hero__accent--right" aria-hidden="true"></div>
-
-            <div class="container hero__inner">
-                <div class="hero__content reveal">
-                    <p class="hero__hello">Hello, I'm Kevin</p>
-                    <h1>AI<br>Engineer</h1>
-                    <div class="hero__underline" aria-hidden="true"></div>
-                    <p class="hero__lead">
-                        Building LLM research, automation systems, and applied AI products with a practical engineering focus.
-                    </p>
-                    <div class="hero__actions" aria-label="Primary actions">
-                        <a class="button button--primary" href="#work">View My Work</a>
-                        <a class="button button--secondary" href="#contact">Contact</a>
-                    </div>
-                </div>
-
-                <div class="hero__portrait-wrap reveal" style="--delay: 100ms;">
-                    <div class="hero__orbit hero__orbit--one" aria-hidden="true"></div>
-                    <div class="hero__orbit hero__orbit--two" aria-hidden="true"></div>
-                    <div class="hero__portrait-card">
-                        <img src="./packages/images/profile.jpeg" width="800" height="800" alt="Portrait of Kevin Siringo-Ringo" class="hero__portrait">
-                    </div>
-                    <div class="float-badge float-badge--top">
-                        <span class="status-light" aria-hidden="true"></span>
-                        Available for AI Work
-                    </div>
-                    <div class="float-badge float-badge--bottom">LLM Research</div>
-                </div>
-
-                <aside class="hero-summary reveal" style="--delay: 180ms;" aria-label="Portfolio summary">
-                    <article class="summary-profile">
-                        <img src="./packages/images/profile.jpeg" width="160" height="160" alt="" aria-hidden="true">
-                        <div>
-                            <p class="eyebrow">Who am I?</p>
-                            <h2>Kevin Siringo-Ringo</h2>
-                            <p>AI Engineer focused on LLM research, automation, data engineering, and applied computer vision.</p>
-                        </div>
-                    </article>
-
-                    <article class="summary-block">
-                        <p class="eyebrow">Experience</p>
-                        <div class="mini-timeline">
-                            <div>
-                                <span>2025 - Present</span>
-                                <strong>AI Engineering</strong>
-                            </div>
-                            <div>
-                                <span>2026</span>
-                                <strong>TOBA-LM Research</strong>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="summary-block">
-                        <p class="eyebrow">Specialties</p>
-                        <div class="specialty-grid">
-                            <span>LLM Research</span>
-                            <span>Automation</span>
-                            <span>Data Engineering</span>
-                            <span>Computer Vision</span>
-                        </div>
-                    </article>
-                </aside>
-            </div>
-        </section>
-
-        <section class="section" id="work">
-            <div class="container">
-                <div class="section__header reveal">
-                    <p class="eyebrow">Selected Work</p>
-                    <h2>Research, models, and applied systems.</h2>
-                </div>
-
-                <div class="featured-work reveal">
-                    <div class="featured-work__content">
-                        <p class="eyebrow">Featured Research</p>
-                        <h3>Adaptive Engram Memory System for Indonesian Language Model</h3>
-                        <p>
-                            Co-authored TOBA-LM research for Indonesian, Batak, and Minangkabau language modeling with adaptive memory and tokenization experiments.
-                        </p>
-                        <div class="metric-row" aria-label="Research metrics">
-                            <div>
-                                <strong>1.2B</strong>
-                                <span>parameters</span>
-                            </div>
-                            <div>
-                                <strong>80%</strong>
-                                <span>training efficiency</span>
-                            </div>
-                            <div>
-                                <strong>12,973</strong>
-                                <span>steps</span>
-                            </div>
-                        </div>
-                        <div class="link-row" aria-label="Research links">
-                            <a href="https://arxiv.org/abs/2603.10006" target="_blank" rel="noreferrer">arXiv</a>
-                            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6400298" target="_blank" rel="noreferrer">SSRN</a>
-                            <a href="https://huggingface.co/papers/2603.10006" target="_blank" rel="noreferrer">Hugging Face</a>
-                        </div>
-                    </div>
-                    <div class="featured-work__mark" aria-hidden="true">
-                        <span>LLM</span>
-                    </div>
-                </div>
-
-                <div class="project-grid">
-                    <article class="project-card reveal">
-                        <img src="./packages/images/tomato-vision.png" width="1662" height="855" alt="Tomato Vision mobile application preview" loading="lazy">
-                        <div class="project-card__body">
-                            <p class="eyebrow">Computer Vision</p>
-                            <h3>Tomato Vision</h3>
-                            <p>YOLOv5 agriculture disease detection for mobile deployment.</p>
-                            <div class="tag-list">
-                                <span>YOLOv5</span>
-                                <span>TensorFlow Lite</span>
-                                <span>Android</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal" style="--delay: 80ms;">
-                        <img src="./packages/images/portfolio1.jpg" width="700" height="467" alt="Smart farming project documentation" loading="lazy">
-                        <div class="project-card__body">
-                            <p class="eyebrow">Automation</p>
-                            <h3>Workflow Systems</h3>
-                            <p>Automation and data-backed systems for professional AI engineering work.</p>
-                            <div class="tag-list">
-                                <span>Python</span>
-                                <span>PostgreSQL</span>
-                                <span>MongoDB</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal" style="--delay: 160ms;">
-                        <img src="./packages/images/pakkat.png" width="1215" height="687" alt="Pakkat Village information system preview" loading="lazy">
-                        <div class="project-card__body">
-                            <p class="eyebrow">Web System</p>
-                            <h3>Pakkat Village</h3>
-                            <p>Public information system from early software engineering work.</p>
-                            <div class="tag-list">
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--glass" id="experience">
-            <div class="container">
-                <div class="section__header reveal">
-                    <p class="eyebrow">Experience & Education</p>
-                    <h2>Timeline built around AI engineering growth.</h2>
-                </div>
-
-                <div class="timeline-grid">
-                    <article class="timeline-card reveal">
-                        <div class="timeline-card__icon" aria-hidden="true">01</div>
-                        <h3>Experience</h3>
-                        <div class="timeline-list">
-                            <div>
-                                <span>2025 - Present</span>
-                                <strong>AI Engineering</strong>
-                                <p>LLM research, workflow automation, and data-backed AI systems.</p>
-                            </div>
-                            <div>
-                                <span>2026</span>
-                                <strong>TOBA-LM Research</strong>
-                                <p>Co-authored low-resource language modeling research.</p>
-                            </div>
-                            <div>
-                                <span>2023 - 2024</span>
-                                <strong>Bangkit Machine Learning</strong>
-                                <p>Machine learning cohort and applied model training foundation.</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="timeline-card reveal" style="--delay: 100ms;">
-                        <div class="timeline-card__icon" aria-hidden="true">02</div>
-                        <h3>Education</h3>
-                        <div class="timeline-list">
-                            <div>
-                                <span>2021 - 2025</span>
-                                <strong>Information Technology</strong>
-                                <p>Universitas Udayana.</p>
-                            </div>
-                            <div>
-                                <span>2024 - 2025</span>
-                                <strong>KSE Awardee</strong>
-                                <p>Yayasan Karya Salemba Empat scholarship awardee.</p>
-                            </div>
-                            <div>
-                                <span>2023</span>
-                                <strong>PKM-KC Funding</strong>
-                                <p>Funded computer vision project for agriculture disease detection.</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="skills">
-            <div class="container">
-                <div class="section__header reveal">
-                    <p class="eyebrow">Capabilities</p>
-                    <h2>Focused technical stack.</h2>
-                </div>
-
-                <div class="skills-grid">
-                    <article class="skill-card reveal">
-                        <h3>LLM & AI Research</h3>
-                        <div class="tag-list tag-list--large">
-                            <span>Large Language Models</span>
-                            <span>Low-Resource Languages</span>
-                            <span>Model Training</span>
-                            <span>Tokenization</span>
-                        </div>
-                    </article>
-                    <article class="skill-card reveal" style="--delay: 80ms;">
-                        <h3>Machine Learning</h3>
-                        <div class="tag-list tag-list--large">
-                            <span>Python</span>
-                            <span>Deep Learning</span>
-                            <span>Computer Vision</span>
-                            <span>TensorFlow</span>
-                        </div>
-                    </article>
-                    <article class="skill-card reveal" style="--delay: 160ms;">
-                        <h3>Systems</h3>
-                        <div class="tag-list tag-list--large">
-                            <span>Automation</span>
-                            <span>Data Engineering</span>
-                            <span>PostgreSQL</span>
-                            <span>MongoDB</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--compact" id="contact">
-            <div class="container">
-                <div class="contact-card reveal">
-                    <div>
-                        <p class="eyebrow">Contact</p>
-                        <h2>Let's talk about AI engineering, LLM research, and automation work.</h2>
-                    </div>
-                    <div class="contact-card__actions">
-                        <a class="button button--primary" href="https://drive.google.com/file/d/1XXdUrt3gKBVHdN8xG-y4IQ4vJsUJf6Sf/view?usp=sharing" target="_blank" rel="noreferrer">View CV</a>
-                        <a class="button button--secondary" href="https://www.linkedin.com/in/kevinsiringoringo/" target="_blank" rel="noreferrer">LinkedIn</a>
-                        <a class="button button--secondary" href="mailto:kevinsiringo756@gmail.com">Email</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__inner">
-            <p>Kevin Siringo-Ringo</p>
-            <p>AI Engineer Portfolio</p>
+  <main id="main" class="shell" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="intro-title">
+      <div class="hero-content">
+        <p class="hero-context">Research &amp; engineering</p>
+        <h1 id="intro-title">Kevin<br>Siringo-Ringo<span class="name-period">.</span></h1>
+        <p class="hero-intro">My work connects language model research with computer vision and applied AI systems.</p>
+        <div class="hero-links">
+          <a class="primary-link" href="#research">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="cv-link" href="https://drive.google.com/file/d/1XXdUrt3gKBVHdN8xG-y4IQ4vJsUJf6Sf/view?usp=sharing" target="_blank" rel="noreferrer">Read my CV <span aria-hidden="true">↗</span></a>
         </div>
-    </footer>
+        <div class="hero-signature"><div class="secondary-links"><a href="https://www.linkedin.com/in/kevinsiringoringo/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/kevin200203" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:kevinsiringo756@gmail.com">Email ↗</a></div></div>
+      </div>
+      <figure class="hero-art" aria-labelledby="art-caption">
+        <div class="hero-figure" id="hero-figure">
+          <svg class="hero-fallback neural-fallback" viewBox="0 0 530 690" aria-hidden="true"><defs><clipPath id="portrait-clip"><polygon points="228,65 212,71 199,77 191,83 189,89 184,95 182,101 180,107 181,113 177,119 177,125 177,131 175,137 174,143 175,149 177,155 178,161 176,167 173,173 173,179 174,185 175,191 175,197 177,203 191,209 193,215 196,221 200,227 205,233 209,239 211,245 212,251 213,257 213,263 215,269 209,275 207,281 195,287 181,293 174,299 167,305 144,311 122,317 118,323 116,329 114,335 108,341 107,347 102,353 99,359 96,365 92,371 90,377 88,383 87,389 85,395 81,401 81,407 76,413 73,419 72,425 67,431 64,437 58,443 57,449 56,455 52,461 49,467 47,473 43,479 41,485 42,491 43,497 44,503 46,509 48,515 49,521 51,527 54,533 58,539 66,545 112,551 143,557 142,563 141,569 140,575 139,581 138,587 136,593 135,599 133,605 131,611 129,617 130,623 136,629 136,635 135,641 134,647 133,653 133,659 132,665 131,671 130,677 129,683 128,689 128,689 414,689 414,689 413,683 411,677 410,671 410,665 409,659 408,653 406,647 404,641 402,635 401,629 400,623 398,617 396,611 395,605 393,599 392,593 391,587 390,581 390,575 388,569 388,563 389,557 389,551 391,545 391,539 392,533 397,527 400,521 403,515 405,509 408,503 409,497 412,491 414,485 416,479 418,473 420,467 422,461 423,455 424,449 425,443 426,437 426,431 428,425 429,419 429,413 430,407 431,401 431,395 432,389 432,383 433,377 433,371 433,365 433,359 433,353 433,347 432,341 431,335 430,329 428,323 427,317 426,311 423,305 420,299 412,293 390,287 365,281 349,275 333,269 327,263 321,257 315,251 303,245 301,239 301,233 301,227 301,221 302,215 303,209 304,203 321,197 322,191 322,185 322,179 323,173 322,167 318,161 319,155 320,149 320,143 321,137 321,131 319,125 318,119 315,113 313,107 308,101 304,95 299,89 292,83 283,77 254,71 237,65"/></clipPath><linearGradient id="portrait-fade" x1="0" y1="0" x2="0" y2="1"><stop offset="76%" stop-color="white"/><stop offset="100%" stop-color="black"/></linearGradient><mask id="portrait-mask"><rect width="530" height="690" fill="url(#portrait-fade)"/></mask></defs><image class="fallback-photo" href="./packages/images/portrait.webp" width="530" height="690" clip-path="url(#portrait-clip)" mask="url(#portrait-mask)"/><use href="./packages/images/neural-portrait.svg#portrait"></use></svg>
+          <button class="figure-control" type="button" hidden aria-label="Pause page animations" aria-pressed="false" aria-describedby="figure-help"></button>
+          <span class="sr-only" id="figure-help">Signals gather into Kevin’s pose and become his portrait. The neural contour keeps moving. Tap the portrait or press Space to pause or resume page animations. Arrow keys change the view.</span>
+        </div>
+        <figcaption id="art-caption" class="sr-only">Kevin Siringo-Ringo. A neural network forms his pose and reconstructs the portrait, with signals circulating around its contour.</figcaption>
+      </figure>
+    </section>
 
-    <script src="./packages/js/main.js" defer></script>
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">01</span><h2 id="research-title">Research</h2></div>
+      <article class="editorial-row research-entry">
+        <div class="margin-note"><time datetime="2026">2026</time><span>TOBA-LM</span><span>Co-author</span><a href="https://arxiv.org/abs/2603.10006" target="_blank" rel="noreferrer">Publication ↗</a></div>
+        <div class="entry-content">
+          <h3 class="paper-title">Adaptive Engram Memory System for Indonesian Language Model<span class="paper-subtitle">Generative AI Based on TOBA LM for Batak and Minang Language</span></h3>
+          <div class="paper-links" aria-label="Read the paper">
+            <a href="https://arxiv.org/abs/2603.10006" target="_blank" rel="noreferrer">arXiv <span aria-hidden="true">↗</span></a>
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6400298" target="_blank" rel="noreferrer">SSRN <span aria-hidden="true">↗</span></a>
+            <a href="https://huggingface.co/papers/2603.10006" target="_blank" rel="noreferrer">Hugging Face <span aria-hidden="true">↗</span></a>
+          </div>
+          <p>Language is the starting point. TOBA-LM explores modeling for Indonesian, Batak, and Minangkabau, with a focus on low-resource languages.</p>
+          <p>The approach brings together syllabic-agglutinative tokenization and adaptive Engram Memory based on n-grams.</p>
+          <p>The <strong class="key-number">1.2B-parameter</strong> model reached convergence in <strong>12,973 steps</strong>. The paper reports approximately <strong>80% fewer training steps</strong> than its conventional-transformer comparison of over 70,000 steps.</p>
+          <!-- Source: arxiv.org/html/2603.10006v1, abstract and section 4.2. This is a reported training-step comparison, not a wall-clock speed claim. -->
+          <details class="citation">
+            <summary>Cite this research <span class="citation-note">· BibTeX</span></summary>
+            <div class="citation-body">
+              <p class="small-text" id="citation-note">Hokky Situngkir, Kevin Siringoringo, and Andhika Bernard Lumbantobing · 2026.</p>
+              <!-- Author order and complete title verified against arXiv:2603.10006. -->
+              <pre id="bibtex"><code>@misc{tobalm2026,
+  title = {Adaptive Engram Memory System for Indonesian Language Model: Generative AI Based on TOBA LM for Batak and Minang Language},
+  author = {Hokky Situngkir and Kevin Siringoringo and Andhika Bernard Lumbantobing},
+  year = {2026},
+  eprint = {2603.10006},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2603.10006}
+}</code></pre>
+              <button class="text-button" id="copy-bibtex" type="button" hidden aria-describedby="citation-note">Copy BibTeX</button>
+              <span class="copy-status small-text" id="copy-status" role="status"></span>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">02</span><h2 id="projects-title">Projects</h2></div>
+      <div class="editorial-row section-intro"><p class="entry-content">Alongside model research, I work on problems in crop health, data workflows, and public information.</p></div>
+      <article class="editorial-row project-entry">
+        <div class="margin-note"><time datetime="2023">2023</time><span>Computer vision</span></div>
+        <div class="entry-content">
+          <h3>Tomato Vision</h3>
+          <p>Tomato Vision brings plant disease detection into an Android application. It uses YOLOv5 for detection and TensorFlow Lite for deployment, with funding through PKM-KC.</p>
+        </div>
+      </article>
+      <article class="editorial-row project-entry compact-entry">
+        <div class="margin-note"><span>2023 program</span><span>AI &amp; agriculture</span></div>
+        <div class="entry-content"><h3>AUTOPLANDES</h3><p>Agriculture is also the setting for AUTOPLANDES: automatic plant detection and smart farming for farmer groups in Bangah, Baturiti. I led the team on this Innovillage-funded social project.</p></div>
+        <a class="entry-source" href="https://innovillage.id/storage/sk_top_120_pdf/c96997a1fb9b86d5ba63cf56ca5f84f6.pdf#page=12" target="_blank" rel="noreferrer">Project record ↗</a>
+      </article>
+      <article class="editorial-row project-entry compact-entry">
+        <div class="margin-note"><span>Automation</span></div>
+        <div class="entry-content"><!-- TODO(content): Add a specific workflow, its users, and a verified outcome to make this project story more concrete. --><h3>Workflow Systems</h3><p>Applied AI also depends on the systems around it. This work focuses on automation and data-backed applications using Python, PostgreSQL, and MongoDB.</p></div>
+      </article>
+      <article class="editorial-row project-entry compact-entry">
+        <div class="margin-note"><span>Web development</span></div>
+        <div class="entry-content"><!-- TODO(content): Add a verified example of the public information or service this website provides. --><h3>Pakkat Village</h3><p>For Pakkat Village, the focus is public information: a website built with HTML, CSS, and JavaScript.</p></div>
+      </article>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">03</span><h2 id="experience-title">Experience &amp; Education</h2></div>
+      <div class="editorial-row section-intro"><p class="entry-content">The path into this work has included university study, teaching, and applied machine-learning training.</p></div>
+      <ol class="cv-list">
+        <li class="editorial-row">
+          <div class="margin-note"><span class="date-range">2021–2025</span></div>
+          <div class="entry-content"><h3>Information Technology</h3><p>I studied Information Technology at Universitas Udayana.</p></div>
+        </li>
+        <li class="editorial-row">
+          <div class="margin-note"><span class="date-range">2022–2023</span></div>
+          <div class="entry-content"><h3>Teaching Assistant · Universitas Udayana</h3><p>During my studies, I supported teaching in programming and algorithms, followed by database concepts.</p></div>
+          <a class="entry-source" href="https://www.linkedin.com/in/kevinsiringoringo/" target="_blank" rel="noreferrer">Profile ↗</a>
+        </li>
+        <li class="editorial-row">
+          <div class="margin-note"><span class="date-range">2023–2024</span></div>
+          <div class="entry-content"><h3>Bangkit Machine Learning</h3><p>I joined the machine learning cohort, with a focus on applied model training.</p></div>
+        </li>
+        <li class="editorial-row">
+          <div class="margin-note"><span class="date-range">2025–Present</span></div>
+          <div class="entry-content"><h3>AI Engineering</h3><p>Today, I work as an AI Engineer at BFI Technologies, focusing on LLM research, workflow automation, and data-backed AI systems.</p></div>
+          <!-- TODO(content): Confirm the BFI-specific start date. 2025–Present is the existing site's AI Engineering period, not a verified BFI tenure. -->
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" id="awards" aria-labelledby="awards-title">
+      <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">04</span><h2 id="awards-title">Awards &amp; Certifications</h2></div>
+      <ul class="cv-list"><li class="editorial-row"><div class="margin-note"><span class="date-range">2024–2025</span></div><p class="award-text"><strong>KSE scholarship</strong> · Yayasan Karya Salemba Empat.</p></li></ul>
+      <ul class="certification-list">
+        <li><span>2024</span><strong>P2MW funding · Digital Business</strong><a href="https://www.linkedin.com/in/kevinsiringoringo/" target="_blank" rel="noreferrer">Profile ↗</a></li>
+        <li><span>Sep 2023</span><strong>Foundations: Data, Data, Everywhere</strong><span>Coursera</span></li>
+        <li><span>Aug 2023</span><strong>Crash Course on Python</strong><span>Coursera</span></li>
+      </ul>
+      <!-- Certification titles, issuers and dates are publicly listed on the user's LinkedIn. TODO(content): Add verified direct credential URLs when available. -->
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">05</span><h2 id="contact-title">Contact</h2></div>
+      <div class="contact-content"><p class="contact-invitation">For research collaborations and applied AI opportunities, tell me what you’re exploring.</p><a class="contact-email" href="mailto:kevinsiringo756@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a><div class="contact-bottom"><a href="mailto:kevinsiringo756@gmail.com">kevinsiringo756@gmail.com</a><a href="https://www.linkedin.com/in/kevinsiringoringo/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="site-footer shell"><span>Kevin Siringo-Ringo</span><a href="#home">Back to top <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
