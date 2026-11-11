@@ -34,7 +34,7 @@ export function enhanceMemory() {
     try {
       canvas = document.createElement('canvas'); canvas.setAttribute('aria-hidden', 'true');
       field.append(canvas);
-      worker = new Worker(new URL('./engram-worker.js?v=20261112-3', import.meta.url), { type: 'module' });
+      worker = new Worker(new URL('./engram-worker.js?v=20261112-4', import.meta.url), { type: 'module' });
       worker.addEventListener('error', fallback);
       worker.addEventListener('message', ({ data }) => {
         if (data.type === 'ready') { clearTimeout(timer); ready = true; state(); }

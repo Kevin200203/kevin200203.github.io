@@ -16,8 +16,8 @@
     try { const theme = localStorage.getItem('portfolio-theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}
   </script>
   <!-- Keep the HTML and redesigned assets in sync with previously cached visits. -->
-  <link rel="stylesheet" href="./packages/css/styles.css?v=20261112-3">
-  <script type="module" src="./packages/js/main.js?v=20261112-3"></script>
+  <link rel="stylesheet" href="./packages/css/styles.css?v=20261112-4">
+  <script type="module" src="./packages/js/main.js?v=20261112-4"></script>
 </head>
 <body>
   <div class="memory-field" aria-hidden="true"></div>
@@ -66,22 +66,29 @@
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="section-heading editorial-row"><span class="section-number" aria-hidden="true">01</span><h2 id="research-title">Research</h2></div>
       <article class="editorial-row research-entry">
-        <div class="margin-note"><time datetime="2026">2026</time><span>TOBA-LM</span><span>Co-author</span><a href="https://arxiv.org/abs/2603.10006" target="_blank" rel="noreferrer">Publication ↗</a></div>
+        <div class="margin-note"><time datetime="2026">2026</time><span>TOBA-LM</span><span>Co-author</span></div>
         <div class="entry-content">
-          <h3 class="paper-title">Adaptive Engram Memory System for Indonesian Language Model<span class="paper-subtitle">Generative AI Based on TOBA LM for Batak and Minang Language</span></h3>
+          <!-- Source: arXiv:2603.10006, exact publication title and author order. -->
+          <h3 class="paper-title">Adaptive Engram Memory System for Indonesian Language Model:<span class="paper-subtitle">Generative AI Based on TOBA LM for Batak and Minang Language</span></h3>
+          <p class="paper-authors" id="paper-authors">Hokky Situngkir, <strong>Kevin Siringoringo</strong>, Andhika Bernard Lumbantobing <span class="publication-meta">· arXiv, 2026</span></p>
           <div class="paper-links" aria-label="Read the paper">
             <a href="https://arxiv.org/abs/2603.10006" target="_blank" rel="noreferrer">arXiv <span aria-hidden="true">↗</span></a>
             <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6400298" target="_blank" rel="noreferrer">SSRN <span aria-hidden="true">↗</span></a>
             <a href="https://huggingface.co/papers/2603.10006" target="_blank" rel="noreferrer">Hugging Face <span aria-hidden="true">↗</span></a>
           </div>
-          <p>Language is the starting point. TOBA-LM explores modeling for Indonesian, Batak, and Minangkabau, with a focus on low-resource languages.</p>
+          <!-- Source: arxiv.org/html/2603.10006v1, Introduction; speaker estimates attributed there to the Indonesian Statistics Agency (BPS), 2011. These are not current estimates. -->
+          <p>Millions of people speak Batak and Minangkabau, yet high-quality language-model data remain scarce. The paper cites Indonesia’s statistics agency, BPS (2011): approximately <strong>8.47 million Batak speakers</strong> and <strong>4.2 million Minang speakers</strong>.</p>
           <p>The approach brings together syllabic-agglutinative tokenization and adaptive Engram Memory based on n-grams.</p>
-          <p>The <strong class="key-number">1.2B-parameter</strong> model reached convergence in <strong>12,973 steps</strong>. The paper reports approximately <strong>80% fewer training steps</strong> than its conventional-transformer comparison of over 70,000 steps.</p>
+          <p>The <strong>1.2B-parameter</strong> model reached convergence in <strong>12,973 steps</strong>. The paper reports approximately <strong>80% fewer training steps</strong> than its conventional-transformer comparison of over 70,000 steps.</p>
           <!-- Source: arxiv.org/html/2603.10006v1, abstract and section 4.2. This is a reported training-step comparison, not a wall-clock speed claim. -->
+          <!-- Source: Figure 1, arxiv.org/html/2603.10006v1/asset-engram/figure_1.jpg. Resized and converted to WebP without cropping or redrawing. -->
+          <figure class="research-figure">
+            <a class="figure-image-link" href="./packages/images/toba-architecture.webp?v=20261112-4" target="_blank" rel="noreferrer" aria-label="View the TOBA-LM architecture diagram at full size, opens in a new tab"><img src="./packages/images/toba-architecture.webp?v=20261112-4" srcset="./packages/images/toba-architecture-small.webp?v=20261112-4 800w, ./packages/images/toba-architecture.webp?v=20261112-4 1600w" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) 75vw, 760px" width="1600" height="1483" loading="lazy" decoding="async" alt="TOBA-LM architecture: a transformer block connects to an Engram module with bigram and trigram embedding pathways."></a>
+            <figcaption>Figure 1. TOBA-LM architecture. Source: <a href="https://arxiv.org/html/2603.10006v1#S1.F1" target="_blank" rel="noreferrer">Situngkir, Siringoringo &amp; Lumbantobing (2026) ↗</a>. Select the diagram to view it at full size.</figcaption>
+          </figure>
           <details class="citation">
             <summary>Cite this research <span class="citation-note">· BibTeX</span></summary>
             <div class="citation-body">
-              <p class="small-text" id="citation-note">Hokky Situngkir, Kevin Siringoringo, and Andhika Bernard Lumbantobing · 2026.</p>
               <!-- Author order and complete title verified against arXiv:2603.10006. -->
               <pre id="bibtex"><code>@misc{tobalm2026,
   title = {Adaptive Engram Memory System for Indonesian Language Model: Generative AI Based on TOBA LM for Batak and Minang Language},
@@ -91,7 +98,7 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.10006}
 }</code></pre>
-              <button class="text-button" id="copy-bibtex" type="button" hidden aria-describedby="citation-note">Copy BibTeX</button>
+              <button class="text-button" id="copy-bibtex" type="button" hidden aria-describedby="paper-authors">Copy BibTeX</button>
               <span class="copy-status small-text" id="copy-status" role="status"></span>
             </div>
           </details>

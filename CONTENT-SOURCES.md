@@ -40,3 +40,9 @@ The November 2026 user review explicitly supplies the hero sentence: “I resear
 ## Memory-grid illustration
 
 Source: TOBA-LM, section 2.2, https://arxiv.org/html/2603.10006v1. The background’s two/three-entry pulses illustrate the bigram/trigram memory pathways described there. The regular perspective grid is decorative: it does not show actual weights, activation measurements, or the model architecture.
+
+## Review: research context and architecture figure
+
+- Introduction, https://arxiv.org/html/2603.10006v1: approximately **8.47 million Batak speakers** and **4.2 million Minang speakers**, explicitly attributed in the prose to the **Indonesian Statistics Agency (BPS), 2011**. The portfolio identifies this as the paper's attribution, not an independently checked BPS dataset or a current estimate. The same paragraph discusses scarcity of high-quality datasets. No newer speaker totals are inferred.
+- Figure 1 original: https://arxiv.org/html/2603.10006v1/asset-engram/figure_1.jpg (5,051 × 4,683). Downloaded from the paper at the co-author's request; converted to 1,600px and 800px WebP variants without cropping, editing labels, or drawing a replacement. The caption credits Situngkir, Siringoringo & Lumbantobing (2026) and links to the source. It retains a white background in both themes.
+- Visible author line and year follow the publication. Kevin's printed paper name remains **Kevin Siringoringo** in the author line and BibTeX.
