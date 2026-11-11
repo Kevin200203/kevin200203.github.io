@@ -94,7 +94,7 @@ function startHeroWhenReady() {
   const enhance = async () => {
     try {
       if (reducedMotion.matches) { heroStarted = false; return; }
-      const { enhanceHero } = await import('./hero.js?v=20261111-14');
+      const { enhanceHero } = await import('./hero.js?v=20261112-1');
       await enhanceHero(hero);
     } catch { /* The inline SVG remains visible if the module or WebGL fails. */ }
   };
@@ -142,7 +142,7 @@ document.addEventListener('click', event => {
   if (anchor?.hash) document.querySelector(anchor.hash)?.classList.add('is-revealed');
 });
 function loadBackground() {
-  const load = () => import('./background.js?v=20261111-14').then(module => module.enhanceBackground()).catch(() => {});
+  const load = () => import('./background.js?v=20261112-1').then(module => module.enhanceBackground()).catch(() => {});
   if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 1800 }); else setTimeout(load, 100);
 }
 if (document.readyState === 'complete') loadBackground(); else window.addEventListener('load', loadBackground, { once: true });

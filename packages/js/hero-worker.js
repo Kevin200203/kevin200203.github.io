@@ -1,6 +1,6 @@
 import * as THREE from './vendor/three.module.min.js';
-import { inside, random, palette as frameColors } from './portrait-network.js?v=20261111-14';
-import { outline } from './portrait-outline.js?v=20261111-14';
+import { inside, random, palette as frameColors } from './portrait-network.js?v=20261112-1';
+import { outline } from './portrait-outline.js?v=20261112-1';
 
 // The photograph is one permanent collection of textured fragments. No photo crossfade.
 let renderer, camera, group, photoMaterial, photoMesh, lineMaterial, nodeMaterial;

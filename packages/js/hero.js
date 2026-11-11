@@ -7,7 +7,7 @@ export async function enhanceHero(container) {
   arrival.className = 'signal-arrival';
   const control = container.querySelector('.figure-control');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const worker = new Worker(new URL('./hero-worker.js?v=20261111-14', import.meta.url), { type: 'module' });
+  const worker = new Worker(new URL('./hero-worker.js?v=20261112-1', import.meta.url), { type: 'module' });
   let ready = false, failed = false, visible = false, playing = true;
   let x = 0, y = 0;
   const send = message => { if (!failed) worker.postMessage(message); };
