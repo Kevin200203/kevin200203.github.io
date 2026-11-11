@@ -91,12 +91,7 @@ strong { font-weight: 600; }
 .primary-link { font-weight: 600; }
 .secondary-links { display: flex; flex-wrap: wrap; gap: 22px; }
 .hero-figure { height: clamp(360px, 36vw, 600px); width: 100%; position: relative; color: var(--ink); }
-.hero-figure canvas, .hero-fallback, .figure-control { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero-fallback { opacity: .8; }
-.hero-figure.is-webgl .hero-fallback { visibility: hidden; }
-.hero-figure.is-preparing .fallback-photo { visibility: hidden; }
-.figure-control { z-index: 1; background: transparent; border: 0; touch-action: pan-y; cursor: crosshair; }
-.figure-control:focus-visible { outline-offset: 0; }
+.hero-fallback { position: absolute; opacity: 1; }
 .section { padding-top: 38px; padding-bottom: 48px; border-top: 1px solid var(--rule); }
 .section-heading { align-items: baseline; margin-bottom: 36px; }
 .section-heading h2 { grid-column: 2 / -1; }
@@ -248,7 +243,7 @@ strong { font-weight: 600; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
 
-/* The portrait's outer pose becomes an abstract, colored neural silhouette. */
+/* The original photograph and contour are present in the initial HTML. */
 .hero-art .hero-figure { height: clamp(420px, 40vw, 620px); }
 .hero-signature { margin-top: 24px; }
 .hero-signature .secondary-links { font-size: 15px; gap: 20px; }
@@ -263,17 +258,20 @@ strong { font-weight: 600; }
   .hero-art figcaption { gap: 8px; }
 }
 
-/* The brief viewport arrival sits beneath all readable content. */
-.signal-arrival { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
 .site-header, main, .site-footer { position: relative; z-index: 1; }
 .hero-art figcaption.sr-only { margin: 0; padding: 0; border: 0; min-width: 0; }
-.figure-control { cursor: pointer; }
 
 .neural-background { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.reveal-ready { opacity: 0; transform: translateY(10px); }
-.reveal-ready.is-revealed { opacity: 1; transform: none; transition: opacity 380ms ease-out, transform 380ms ease-out; }
-@media (prefers-reduced-motion: reduce) { .reveal-ready { opacity: 1; transform: none; } }
-@media print { .reveal-ready { opacity: 1; transform: none; } .neural-background, .signal-arrival, .figure-control { display: none !important; } }
 
 .section-intro { margin-bottom: 28px; }
 .project-entry .entry-content h3 { margin-bottom: 10px; }
+
+/* Only the contour receives a single, short settling pulse. The photo never fades. */
+.portrait-contour { transform-origin: 50% 50%; animation: contour-settle 1.4s ease-out both; }
+@keyframes contour-settle {
+  0% { opacity: .55; transform: scale(1.025); }
+  55% { opacity: 1; }
+  100% { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) { .portrait-contour { animation: none; } }

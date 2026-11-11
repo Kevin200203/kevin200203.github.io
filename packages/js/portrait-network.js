@@ -1,4 +1,4 @@
-import { outline } from './portrait-outline.js?v=20261112-1';
+import { outline } from './portrait-outline.js?v=20261112-2';
 
 // The neural geometry follows the pose outline; source pixels are only used by the separate photo reveal.
 export const palette = ['#b4232c', '#cc5565', '#9e4a72', '#75658e', '#af7682', '#d28d7d'];

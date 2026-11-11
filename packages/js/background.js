@@ -3,7 +3,7 @@ export function enhanceBackground() {
   if (!('Worker' in window) || !('transferControlToOffscreen' in HTMLCanvasElement.prototype)) return;
   const canvas = document.createElement('canvas');
   canvas.className = 'neural-background'; canvas.setAttribute('aria-hidden', 'true');
-  const worker = new Worker(new URL('./background-worker.js?v=20261112-1', import.meta.url), { type: 'module' });
+  const worker = new Worker(new URL('./background-worker.js?v=20261112-2', import.meta.url), { type: 'module' });
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let failed = false, playing = true, scheduled = 0;
   const send = data => { if (!failed) worker.postMessage(data); };

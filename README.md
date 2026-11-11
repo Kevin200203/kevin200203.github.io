@@ -10,30 +10,19 @@ Run `python3 scripts/preview.py`, then open http://localhost:4173. This checkout
 
 - `index.html`: semantic content, citation, navigation, and a static SVG portrait fallback.
 - `packages/css/styles.css`: wide editorial layout, readable text columns, local fonts, responsive navigation, and light/dark palettes.
-- `packages/js/main.js`: theme preference, mobile navigation, citation copying, deferred visual loading, and one-time section reveals.
+- `packages/js/main.js`: theme preference, mobile navigation, citation copying, deferred background loading.
 - `packages/js/background.js` / `background-worker.js`: slow sine-wave neural background at ten fps, with all reading regions erased from the canvas.
-- `packages/js/hero.js`: interaction, visibility, reduced motion, and the bridge to the rendering worker.
-- `packages/js/hero-worker.js`: Three.js portrait formation, reconstruction, and contour signal loop. Rendering runs in a worker, capped at approximately 30 fps and DPR 2.
 - `packages/js/portrait-outline.js`: the pose contour used by both the photograph clipping geometry and the neural frame.
 - `packages/js/portrait-network.js`: shared contour containment, deterministic variation, and coordinated red/rose/mauve colors.
 - `packages/js/vendor/`: pinned Three.js 0.180.0 ES modules and MIT license.
 - `packages/fonts/`: Bricolage Grotesque and Source Serif 4 WOFF2 files and OFL licenses.
 - `packages/images/`: the original portrait crop and its vector neural frame.
 
-## Hero direction
+## Portrait
 
-The current design follows the user's latest revisions:
+The original clipped photograph and its SVG contour render directly from HTML. Only the contour settles once over 1.4 seconds using CSS; the photograph is never hidden or assembled from particles. Reduced motion disables that animation. Sections are always visible, without scroll reveals.
 
-1. A brief, sparse network arrives from across the viewport: 48 signals on small screens, 96 on desktop. It does not intercept input and sits behind readable content.
-2. Textured fragments travel into the user's exact pose. Each fragment carries its piece of the original photograph from the beginning.
-3. The same fragments enlarge and join into one photographic surface; there is no separate neural silhouette replaced by a fading photograph. A procedural contour mask removes the source background.
-4. Three interrupted, moving paths with traveling nodes follow the head, shoulders, and body. A curved network across the lower torso moves with them and continues the body into the background, concealing its cropped bottom. Colors derive from the site's red accent.
-
-The viewport layer is removed after the arrival, or immediately when the visitor scrolls. Only the contour and lower-torso networks continue moving. No stage labels, Replay, or visible playback buttons remain. A separate, very faint sinusoidal network follows the page edges and empty spaces. Its renderer removes text, links, headings, and the portrait area from the drawing; it stops in a hidden tab and becomes static with reduced motion. The portrait itself supports tap/Space to pause or resume both continuous animations and arrow keys to tilt, with screen-reader instructions and visible keyboard focus.
-
-Rendering suspends offscreen or in a hidden tab. Reduced-motion visitors get the static final portrait and frame without downloading Three.js. Missing Worker/OffscreenCanvas/WebGL, module failure, and context loss retain the static fallback. Page content and navigation remain available without JavaScript. The five main sections each appear once on entering the viewport, using a short 380ms transition. Reduced motion, print, and no-JavaScript views show the content directly; anchor navigation and keyboard focus also reveal destinations.
-
-To change the pose, update the contour and source photo together. To change colors, edit `portrait-network.js`; fragment density, contour flow, and the lower-torso shape live in `hero-worker.js`. After editing that geometry, run the optional authoring command `node scripts/generate-neural-fallback.mjs` to refresh the checked-in SVG frame and inline clipping path. This is not a deployment build step.
+The optional authoring command `node scripts/generate-neural-fallback.mjs` refreshes the checked-in contour asset and inline clipping path. This is not a deployment build step. Keep the contour and source photograph aligned when changing the pose.
 
 ## Content and extension
 

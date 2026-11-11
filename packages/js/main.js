@@ -82,67 +82,8 @@ copyButton.addEventListener('click', async () => {
   }
 });
 
-// Text, images, and the inline SVG render before the optional WebGL module.
-// Reduced-motion visitors keep the static SVG and do not download Three.js.
-const hero = document.querySelector('#hero-figure');
-let heroStarted = false;
-let heroVisible = false;
-let pageLoaded = document.readyState === 'complete';
-function startHeroWhenReady() {
-  if (heroStarted || !heroVisible || !pageLoaded || document.hidden || reducedMotion.matches) return;
-  heroStarted = true;
-  const enhance = async () => {
-    try {
-      if (reducedMotion.matches) { heroStarted = false; return; }
-      const { enhanceHero } = await import('./hero.js?v=20261112-1');
-      await enhanceHero(hero);
-    } catch { /* The inline SVG remains visible if the module or WebGL fails. */ }
-  };
-  if ('requestIdleCallback' in window) window.requestIdleCallback(enhance, { timeout: 1800 });
-  else requestAnimationFrame(() => requestAnimationFrame(enhance));
-}
-if ('IntersectionObserver' in window) {
-  const visibility = new IntersectionObserver(([entry]) => {
-    heroVisible = entry.isIntersecting;
-    startHeroWhenReady();
-  });
-  visibility.observe(hero);
-} else {
-  heroVisible = true;
-}
-window.addEventListener('load', () => { pageLoaded = true; startHeroWhenReady(); }, { once: true });
-document.addEventListener('visibilitychange', startHeroWhenReady);
-reducedMotion.addEventListener('change', startHeroWhenReady);
-startHeroWhenReady();
-
-// Reveal each content section once; unenhanced and reduced-motion pages stay readable.
-const revealSections = [...document.querySelectorAll('main > .section')];
-let revealObserver;
-function setupReveals() {
-  revealObserver?.disconnect();
-  if (reducedMotion.matches || !('IntersectionObserver' in window)) {
-    revealSections.forEach(section => section.classList.remove('reveal-ready'));
-    return;
-  }
-  revealObserver = new IntersectionObserver(entries => {
-    for (const entry of entries) if (entry.isIntersecting) {
-      entry.target.classList.add('is-revealed'); revealObserver.unobserve(entry.target);
-    }
-  }, { rootMargin: '0px 0px -24px 0px', threshold: 0 });
-  for (const section of revealSections) {
-    if (section.getBoundingClientRect().top < innerHeight || section.classList.contains('is-revealed')) continue;
-    section.classList.add('reveal-ready'); revealObserver.observe(section);
-  }
-}
-setupReveals();
-reducedMotion.addEventListener('change', setupReveals);
-document.addEventListener('focusin', event => event.target.closest('.reveal-ready')?.classList.add('is-revealed'));
-document.addEventListener('click', event => {
-  const anchor = event.target.closest('a[href^="#"]');
-  if (anchor?.hash) document.querySelector(anchor.hash)?.classList.add('is-revealed');
-});
 function loadBackground() {
-  const load = () => import('./background.js?v=20261112-1').then(module => module.enhanceBackground()).catch(() => {});
+  const load = () => import('./background.js?v=20261112-2').then(module => module.enhanceBackground()).catch(() => {});
   if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 1800 }); else setTimeout(load, 100);
 }
 if (document.readyState === 'complete') loadBackground(); else window.addEventListener('load', loadBackground, { once: true });
