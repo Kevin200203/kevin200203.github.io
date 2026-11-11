@@ -27,7 +27,7 @@ The indexed public profile matches the exact LinkedIn destination in the origina
 - Foundations: Data, Data, Everywhere — Coursera, September 2023.
 - Crash Course on Python — Coursera, August 2023.
 
-Direct certificate URLs have not been verified; course titles are not linked to guessed URLs. The LinkedIn role is listed under Bandung Fe Institute, while the user explicitly describes their current employer as BFI Technologies. The portfolio preserves the user's employer wording and the existing 2025–Present AI Engineering period; the exact BFI employment start remains a content clarification.
+The two Coursera entries were removed in the November review; no direct credential links were invented. The LinkedIn role is listed under Bandung Fe Institute, while the user explicitly describes their current employer as BFI Technologies. The portfolio preserves the user's employer wording. The review explicitly confirms **13 August 2025** as the BFI start date; the `<time datetime="2025-08-13">` now records it, with 2025–Present displayed consistently with the other year ranges.
 
 ## Deliberately excluded
 
@@ -52,3 +52,7 @@ Source: TOBA-LM, section 2.2, https://arxiv.org/html/2603.10006v1. The backgroun
 - Tomato Vision's Android, YOLOv5, TensorFlow Lite, PKM-KC, and 2023 details come from the original portfolio. The user supplied this application destination: https://play.google.com/store/apps/details?id=org.tensorflow.lite.tomatovision.detection. Its inclusion does not imply current regional availability or a newly verified impact metric. The portfolio establishes project participation but not a specific role; `TODO(content)` requests that detail rather than inventing team leadership or sole authorship.
 - AUTOPLANDES opens with the verified team-lead role from the Innovillage decision cited above. The source link sits directly below its description.
 - Workflow Systems and Pakkat Village are removed as requested; their unresolved content prompts are removed with them.
+
+## Review: CV and awards
+
+Role/organization titles follow the user’s requested wording. Experience is ordered by start date descending (2025, 2023, 2022, 2021), with concise descriptions retaining the original scope. Awards retain the KSE scholarship (2024–2025) and P2MW funding (2024); generic LinkedIn “Profile” links and the two Coursera entries are removed.

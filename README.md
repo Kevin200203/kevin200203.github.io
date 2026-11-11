@@ -37,7 +37,7 @@ The copy was condensed and reframed:
 - The hero introduces Kevin with “My work connects language model research with computer vision and applied AI systems.”
 - Research uses the complete publication title and author order, three short paragraphs, contextual figures, prominent paper links, and copyable BibTeX. The training result is attributed to the paper and described in steps, not wall-clock speed.
 - Projects cover Tomato Vision and AUTOPLANDES, with evidence links directly below each description and no project screenshots. Tomato Vision’s specific role is still a content TODO.
-- Experience and education follow a chronological narrative: university study, teaching during those studies, Bangkit training, then the current AI Engineering role. Scholarships, funding, and courses appear once in Awards & Certifications.
+- Experience and education are ordered newest first, with roles and organizations in each heading. The user confirmed the BFI start date as 13 August 2025. Awards contains the KSE scholarship and P2MW funding.
 - Contact invites research collaboration and applied AI opportunities with “tell me what you’re exploring,” retaining the original email and LinkedIn destinations.
 
 Add a section using `.section` / `.section-heading` with a unique heading ID and `aria-labelledby`. `.editorial-row` pairs a `.margin-note` with `.entry-content`; on small screens they become one reading column. Keep facts in their relevant section and technology names in context.
@@ -46,8 +46,6 @@ Add a section using `.section` / `.section-heading` with a unique heading ID and
 
 Search `TODO(content)` in `index.html`:
 
-- Confirm the BFI-specific employment start date. The existing 2025–Present period describes AI Engineering, rather than verified BFI tenure.
-- Supply verified direct credential URLs for the listed courses.
 
 The paper's author list and the meaning of its training-step comparison have been checked against arXiv; they are no longer draft TODOs.
 
